@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <button onclick="showPage('home')">خانه</button>
+        <button onclick="openAdmin()">مدیریت</button>
+    </nav>
+
+    <!-- صفحه خانه -->
+    <div id="home" class="page active">
+        <input id="search" type="text" placeholder="جستجو...">
+        <div id="movieList" class="list"></div>
+    </div>
+
+    <!-- صفحه جزئیات -->
+    <div id="details" class="page">
+        <h2 id="d_title"></h2>
+        <img id="d_image">
+        <p id="d_desc"></p>
+        <button onclick="showPage('player')">پخش</button>
+    </div>
+
+    <!-- صفحه پخش -->
+    <div id="player" class="page">
+        <h2 id="p_title"></h2>
+        <video id="p_video" controls></video>
+    </div>
+
+    <!-- صفحه مدیریت -->
+    <div id="admin" class="page">
+        <h2>مدیریت فیلم‌ها</h2>
+
+        <input id="title" placeholder="نام فیلم">
+        <input id="image" placeholder="لینک عکس">
+        <input id="desc" placeholder="توضیحات">
+        <input id="video" placeholder="لینک ویدیو">
+        <button onclick="addMovie()">افزودن</button>
+
+        <h3>لیست فیلم‌ها</h3>
+        <div id="adminList"></div>
+
+        <h3>تغییر رمز مدیریت</h3>
+        <input id="newPass" placeholder="رمز جدید">
+        <button onclick="changePass()">تغییر رمز</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
